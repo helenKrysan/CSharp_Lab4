@@ -45,13 +45,10 @@ namespace Lab4_Krysan.Tools.DataStorage
             SaveChanges();
         }
 
-        public void UpdatePerson(Person person, string name, string surname, string email)
+        public void Update(string name, string surname, string email)
         {
-            _persons.Remove(person);
-            person.Name = name;
-            person.Surname = surname;
-            person.Email = email;
-            _persons.Add(person);
+            GetPersonByName(name).Surname = surname;
+            GetPersonByName(name).Email = email;
             SaveChanges();
         }
 
@@ -64,5 +61,6 @@ namespace Lab4_Krysan.Tools.DataStorage
         {
             SerializationManager.Serialize(_persons, FileFolderHelper.StorageFilePath);
         }
+
     }
 }

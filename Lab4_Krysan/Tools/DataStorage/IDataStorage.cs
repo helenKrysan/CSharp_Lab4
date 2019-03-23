@@ -12,7 +12,7 @@ namespace Lab4_Krysan.Tools.DataStorage
 
         void AddPerson(Person person);
         void DeletePerson(Person person);
-        void UpdatePerson(Person person, string name, string surname, string email);
+        void Update(string name, string surname, string email);
 
 
         List<Person> PersonsList { get; }

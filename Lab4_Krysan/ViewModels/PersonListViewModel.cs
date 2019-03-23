@@ -26,8 +26,12 @@ namespace Lab4_Krysan.ViewModels
             get => _selectedPerson;
             set
             {
-                _selectedPerson = value;
-                OnPropertyChanged();
+                if (value != null)
+                {
+                    _selectedPerson = value;
+                    StationManager.DataStorage.Update(value.Name, value.Surname, value.Email);
+                    OnPropertyChanged();
+                }
             }
         }
 
@@ -59,15 +63,14 @@ namespace Lab4_Krysan.ViewModels
 
         private bool CanExecuteCommand()
         {
-            return true;
+            return StationManager.DataStorage.PersonExists(SelectedPerson.Name);
         }
 
         private void DeletePersonImpl(object o)
         {
             StationManager.DataStorage.DeletePerson(SelectedPerson);
             _persons.Remove(SelectedPerson);
-        }
-
+        }        
 
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)

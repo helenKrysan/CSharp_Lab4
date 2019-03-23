@@ -9,8 +9,8 @@
 	<DataGrid CanUserDeleteRows="False"  SelectedItem="{Binding SelectedPerson, Mode=TwoWay}" ItemsSource="{Binding Persons, Mode=OneWay}" AutoGenerateColumns="False" >
 		<DataGrid.Columns>
 			<DataGridTextColumn IsReadOnly="True" Header="Name" Binding="{Binding Name}"></DataGridTextColumn>
-			<DataGridTextColumn IsReadOnly="True" Header="Surname" Binding="{Binding Surname}"></DataGridTextColumn>
-			<DataGridTextColumn IsReadOnly="True" Header="E-mail" Binding="{Binding Email}"></DataGridTextColumn>
+			<DataGridTextColumn Header="Surname" Binding="{Binding Surname, UpdateSourceTrigger=LostFocus, Mode=TwoWay}"></DataGridTextColumn>
+			<DataGridTextColumn Header="E-mail" Binding="{Binding Email, UpdateSourceTrigger=LostFocus, Mode=TwoWay}"></DataGridTextColumn>
 			<DataGridTextColumn IsReadOnly="True" Header="Date of birth" Binding="{Binding DateOfBirth, StringFormat=d}"></DataGridTextColumn>
 			<DataGridTextColumn IsReadOnly="True" Header="Sun Sign" Binding="{Binding SunSign}"></DataGridTextColumn>
 			<DataGridTextColumn IsReadOnly="True" Header="Chinese Sign" Binding="{Binding ChineseSign}"></DataGridTextColumn>

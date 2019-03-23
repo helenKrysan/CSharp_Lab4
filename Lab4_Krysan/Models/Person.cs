@@ -1,6 +1,7 @@
 ﻿using System;
 using Lab4_Krysan.Tools.Exception;
 using System.ComponentModel.DataAnnotations;
+using Lab4_Krysan.Tools.Managers;
 
 namespace Lab4_Krysan.Models
 {
@@ -111,7 +112,10 @@ namespace Lab4_Krysan.Models
             }
             set
             {
-                _surname = value;
+                if(!String.IsNullOrWhiteSpace(value))
+                {
+                    _surname = value;
+                }
             }
         }
 
@@ -123,7 +127,10 @@ namespace Lab4_Krysan.Models
             }
             set
             {
-                _email = value;
+                if (new EmailAddressAttribute().IsValid(value))
+                {
+                    _email = value;
+                }
             }
         }
 
