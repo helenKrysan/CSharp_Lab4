@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Lab4_Krysan"
 		xmlns:fa="http://schemas.fontawesome.io/icons/"
         mc:Ignorable="d"
-        Title="MainWindow" Height="400" Width="525">
+        Title="MainWindow" Height="500" Width="1000">
 	<Grid>
 		<ContentControl Name="_contentControl" IsEnabled="{Binding IsControlEnabled, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"></ContentControl>
 		<fa:ImageAwesome Icon="Refresh" Width="50" Height="50" Spin="True" Visibility="{Binding LoaderVisibility, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"></fa:ImageAwesome>

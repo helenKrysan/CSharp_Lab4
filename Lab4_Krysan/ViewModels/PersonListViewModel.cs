@@ -65,6 +65,7 @@ namespace Lab4_Krysan.ViewModels
         private void DeletePersonImpl(object o)
         {
             StationManager.DataStorage.DeletePerson(SelectedPerson);
+            _persons.Remove(SelectedPerson);
         }
 
 
